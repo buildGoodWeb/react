@@ -1,0 +1,5 @@
+# node npm deps
+/node_modules
+
+# /dist file
+/dist
