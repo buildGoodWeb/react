@@ -1,22 +1,19 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as TypeActions from '../actions';
+import { Chrome } from '../components';
 
-
-export class _App extends Component {
+class _Overview extends Component {
+  constructor(props, context) {
+    super(props, context);
+  }
   render() {
     return (
-      <div>
-        {this.props.children}
-      </div>
+      <Chrome />
     );
   }
 }
-
-_App.propTypes = {
-  children: PropTypes.object.isRequired,
-};
 
 function mapStateToProps(state) {
   return {
@@ -30,4 +27,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export const App = connect(mapStateToProps, mapDispatchToProps)(_App);
+export const Overview = connect(mapStateToProps, mapDispatchToProps)(_Overview);
