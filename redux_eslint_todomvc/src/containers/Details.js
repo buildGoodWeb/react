@@ -6,12 +6,11 @@ import { ListItem, Chrome } from '../components';
 
 class _Details extends Component {
   render() {
-    console.log('this.props', this.props);
-    const { done, actions } = this.props;
+    const { done, del } = this.props;
     return (
-      <Chrome>
+      <Chrome {...this.props}>
         <h2>Details</h2>
-        <ListItem items={done} deleteItem={actions.del} />
+        <ListItem items={done} deleteItem={del} />
       </Chrome>
     );
   }
@@ -19,7 +18,7 @@ class _Details extends Component {
 
 _Details.propTypes = {
   done: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired,
+  del: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -28,10 +27,4 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(TypeActions, dispatch),
-  };
-}
-
-export const Details = connect(mapStateToProps, mapDispatchToProps)(_Details);
+export const Details = connect(mapStateToProps, TypeActions)(_Details);

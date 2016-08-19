@@ -1,0 +1,18 @@
+.sidebar {
+  background: #000;
+  color:#fff;
+  height:50px;
+  widows: 100%;
+}
+ul.sidebar li {
+  float: left;
+  line-height: 50px;
+  padding-left: 20px;
+}
+ul.sidebar li>a {
+  color:#fff;
+  text-decoration: none;
+}
+ul.sidebar li>a:hover {
+  text-decoration: underline;
+}

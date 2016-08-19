@@ -1,0 +1,11 @@
+ul.normal{
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+ul.normal li {
+  padding: 25px;
+  color: #454343;
+  border-bottom: 1px dashed #ccc;
+}

@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { ADD, DELETE } from '../constants';
+import { routerReducer as routing } from 'react-router-redux'
 
 const initialState = [
   {
@@ -16,7 +17,7 @@ function done(state = initialState, action) {
           id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
           text: action.text,
         },
-        ...state
+        ...state,
       ];
     case DELETE:
       return state.filter(item => item.id !== action.id);
@@ -26,6 +27,7 @@ function done(state = initialState, action) {
 }
 
 const rootReducer = combineReducers({
+  routing,
   done,
 });
 

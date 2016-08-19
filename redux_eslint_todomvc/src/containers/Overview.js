@@ -10,7 +10,9 @@ class _Overview extends Component {
   }
   render() {
     return (
-      <Chrome />
+      <Chrome {...this.props}>
+        <h2>Overview</h2>
+      </Chrome>
     );
   }
 }

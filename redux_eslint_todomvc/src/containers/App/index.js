@@ -1,13 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as TypeActions from '../actions';
+import * as TypeActions from '../../actions';
+import style from './style.css';
 
 
 export class _App extends Component {
   render() {
     return (
-      <div>
+      <div className={style.app}>
         {this.props.children}
       </div>
     );
@@ -15,7 +16,7 @@ export class _App extends Component {
 }
 
 _App.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 function mapStateToProps(state) {

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import style from './style.css';
 
 export class ListItem extends Component {
   constructor(props, context) {
@@ -6,7 +7,7 @@ export class ListItem extends Component {
   }
   render() {
     return (
-      <ul style={{ width: '300px' }}>
+      <ul className={style.normal}>
         {this.props.items.map(item => {
           return (
             <li key={item.id}>

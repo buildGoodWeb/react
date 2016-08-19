@@ -6,14 +6,12 @@ import { AddTextInput, ListItem, Chrome } from '../components';
 
 class _Options extends Component {
   render() {
-    const { done, actions } = this.props;
-    console.log('this.props', this.props);
-    console.log('done', done);
-    console.log('actions', actions);
+    const { done, del } = this.props;
     return (
-      <Chrome>
-        <AddTextInput {...actions} />
-        <ListItem items={done} deleteItem={actions.del} />
+      <Chrome {...this.props}>
+        <h2>Options</h2>
+        <AddTextInput {...this.props} />
+        <ListItem items={done} deleteItem={del} />
       </Chrome>
     );
   }
@@ -21,7 +19,7 @@ class _Options extends Component {
 
 _Options.propTypes = {
   done: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired,
+  del: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -30,10 +28,4 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(TypeActions, dispatch),
-  };
-}
-
-export const Options = connect(mapStateToProps, mapDispatchToProps)(_Options);
+export const Options = connect(mapStateToProps, TypeActions)(_Options);
