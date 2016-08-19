@@ -1,27 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as TypeActions from '../actions';
-import { AddTextInput, ListItem } from '../components';
+import * as TypeActions from '../../actions';
+import style from './style.css';
 
-class _App extends Component {
 
+export class _App extends Component {
   render() {
-    const { done, actions } = this.props;
-    console.log('done', done);
-    console.log('actions', actions);
     return (
-      <div>
-        <AddTextInput {...actions} />
-        <ListItem items={done} deleteItem={actions.del} />
+      <div className={style.app}>
+        {this.props.children}
       </div>
     );
   }
 }
 
 _App.propTypes = {
-  done: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 function mapStateToProps(state) {

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import style from './style.css';
 
 export class AddTextInput extends Component {
   constructor(props, context) {
@@ -11,13 +12,11 @@ export class AddTextInput extends Component {
   }
 
   handleChange(evt) {
-    console.log('evt--value:', evt.target.value);
     this.setState({ text: evt.target.value });
   }
   addText() {
     const text = this.state.text.trim();
     if(text) {
-      console.log('add text:', text);
       this.props.add(text);
       this.setState({ text: '' });
     }
@@ -25,7 +24,7 @@ export class AddTextInput extends Component {
 
   render() {
     return (
-      <div>
+      <div className={style.normal}>
         <input
           type="text"
           value={this.state.text}

@@ -1,0 +1,31 @@
+body,
+html {
+  margin: 0;
+}
+ul,
+ul li {
+  margin: 0;
+  padding: 0;
+}
+button {
+  padding:8px 25px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background: #e6e5e5;
+}
+ul li {
+  list-style-type: none;
+}
+input {
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.app {
+  padding: 0 20px;
+}
